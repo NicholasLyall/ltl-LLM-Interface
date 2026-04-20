@@ -24,6 +24,10 @@ python main.py
 
 Or on Windows, run `run.bat`.
 
+### Linux / macOS
+
+The MuJoCo GL backend is set automatically based on your platform (`wgl` on Windows, `glfw` elsewhere). On Linux, make sure `glfw` is available — it is included with MuJoCo but requires a display (X11 or a virtual framebuffer).
+
 ## How it works
 
 Type a natural language instruction in the chat panel, for example "place the red cube then the blue cube". Claude generates an LTL formula specifying the task constraints, the planner derives an ordered execution sequence from that formula, and the robot simulation carries it out. You can correct or refine the plan by continuing the conversation before hitting Execute.

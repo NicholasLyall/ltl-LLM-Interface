@@ -12,7 +12,7 @@ Physics NEVER blocks on IO.
 import sys, os, struct, threading, queue
 import numpy as np
 
-os.environ["MUJOCO_GL"] = "wgl"
+os.environ.setdefault("MUJOCO_GL", "wgl" if sys.platform == "win32" else "glfw")
 import warnings; warnings.filterwarnings("ignore")
 
 import robosuite  # noqa
